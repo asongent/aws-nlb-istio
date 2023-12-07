@@ -38,7 +38,7 @@ containerSecurityContext: ~
 
 service: 
   # Type of service. Set to "None" to disable the service entirely
-  type: LoadBalancer
+  type: NodePort
   ports:
   - name: status-port
     port: 15021
@@ -64,8 +64,8 @@ service:
     # service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
     # # service.beta.kubernetes.io/aws-load-balancer-internal: "true"
     # service.beta.kubernetes.io/aws-load-balancer-scheme: internal
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: >-
-      arn:aws:acm:us-east-1:843825445314:certificate/fbc6bd31-3a91-4ce3-b261-83a5721588f3
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: >-
+    #   arn:aws:acm:us-east-1:843825445314:certificate/fbc6bd31-3a91-4ce3-b261-83a5721588f3
     # service.beta.kubernetes.io/aws-load-balancer-ssl-ports: https"
 
   loadBalancerIP: ""
