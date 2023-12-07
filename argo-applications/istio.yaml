@@ -13,7 +13,7 @@ spec:
       valueFiles:
       - values.yaml
     path: service-mesh/istio-base
-    repoURL:  https://github.com/asongent/gen.git
+    repoURL:  https://github.com/asongent/aws-nlb-istio.git
     targetRevision: HEAD
   syncPolicy:
     automated:
@@ -38,7 +38,7 @@ spec:
     path: service-mesh/ingressgateway
     # kustomize:
     #   version: v4.5.7
-    repoURL:  https://github.com/asongent/gen.git
+    repoURL:  https://github.com/asongent/aws-nlb-istio.git
     targetRevision: HEAD
   syncPolicy:
     automated:
@@ -62,7 +62,7 @@ spec:
     path: service-mesh/istiod
     # kustomize:
     #   version: v4.5.7
-    repoURL:  https://github.com/asongent/gen.git
+    repoURL:  https://github.com/asongent/aws-nlb-istio.git
     targetRevision: HEAD
   syncPolicy:
     automated:

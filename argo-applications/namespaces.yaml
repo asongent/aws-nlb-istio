@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: namespaces
-    repoURL:  https://github.com/asongent/gen.git
+    repoURL:  https://github.com/asongent/aws-nlb-istio.git
     targetRevision: HEAD
   syncPolicy:
     automated:
