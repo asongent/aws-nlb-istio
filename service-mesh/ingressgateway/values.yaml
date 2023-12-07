@@ -38,7 +38,7 @@ containerSecurityContext: ~
 
 service:
   # Type of service. Set to "None" to disable the service entirely
-  type: LoadBalancer
+  type: ClusterIP #LoadBalancer
   ports:
   - name: status-port
     port: 15021
@@ -55,19 +55,19 @@ service:
     protocol: TCP
     nodePort: 30002
     targetPort: 443
-  annotations: 
-    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
-    service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '3600'
-    service.beta.kubernetes.io/aws-load-balancer-healthcheck-healthy-threshold: '3'
-    service.beta.kubernetes.io/aws-load-balancer-healthcheck-port: '80'
-    service.beta.kubernetes.io/aws-load-balancer-name: istio-private
-    # service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
-    # service.beta.kubernetes.io/aws-load-balancer-internal: "true"
-    # service.beta.kubernetes.io/aws-load-balancer-scheme: internal
-    service.beta.kubernetes.io/aws-load-balancer-ssl-negotiation-policy: "ELBSecurityPolicy-2016-08"
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: >-
-      arn:aws:acm:us-east-1:843825445314:certificate/fbc6bd31-3a91-4ce3-b261-83a5721588f3
-    # service.beta.kubernetes.io/aws-load-balancer-ssl-ports: httpse"
+  annotations: {}
+    # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+    # service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '3600'
+    # service.beta.kubernetes.io/aws-load-balancer-healthcheck-healthy-threshold: '3'
+    # service.beta.kubernetes.io/aws-load-balancer-healthcheck-port: '80'
+    # service.beta.kubernetes.io/aws-load-balancer-name: istio-private
+    # # service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+    # # service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    # # service.beta.kubernetes.io/aws-load-balancer-scheme: internal
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-negotiation-policy: "ELBSecurityPolicy-2016-08"
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: >-
+    #   arn:aws:acm:us-east-1:843825445314:certificate/fbc6bd31-3a91-4ce3-b261-83a5721588f3
+    # # service.beta.kubernetes.io/aws-load-balancer-ssl-ports: httpse"
 
   loadBalancerIP: ""
   loadBalancerSourceRanges: []
