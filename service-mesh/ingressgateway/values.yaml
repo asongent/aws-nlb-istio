@@ -36,45 +36,45 @@ podAnnotations:
 securityContext: ~
 containerSecurityContext: ~
 
-service:
+service: {}
   # Type of service. Set to "None" to disable the service entirely
-  type: LoadBalancer
-  ports:
-  - name: status-port
-    port: 15021
-    protocol: TCP
-    nodePort: 30000
-    targetPort: 15021
-  - name: http2
-    port: 80
-    nodePort: 30001
-    protocol: TCP
-    targetPort: 80
-  - name: https
-    port: 443
-    protocol: TCP
-    nodePort: 30002
-    targetPort: 443
-  annotations:
+  # type: LoadBalancer
+  # ports:
+  # - name: status-port
+  #   port: 15021
+  #   protocol: TCP
+  #   nodePort: 30000
+  #   targetPort: 15021
+  # - name: http2
+  #   port: 80
+  #   nodePort: 30001
+  #   protocol: TCP
+  #   targetPort: 80
+  # - name: https
+  #   port: 443
+  #   protocol: TCP
+  #   nodePort: 30002
+  #   targetPort: 443
+  # annotations:
     # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
     # service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '3600'
-    service.beta.kubernetes.io/aws-load-balancer-healthcheck-healthy-threshold: '3'
+    # service.beta.kubernetes.io/aws-load-balancer-healthcheck-healthy-threshold: '3'
     # service.beta.kubernetes.io/aws-load-balancer-healthcheck-port: '80'
     # service.beta.kubernetes.io/aws-load-balancer-name: istio-private
-    # # service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
-    # # service.beta.kubernetes.io/aws-load-balancer-internal: "true"
-    # # service.beta.kubernetes.io/aws-load-balancer-scheme: internal
+    # service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+    # service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    # service.beta.kubernetes.io/aws-load-balancer-scheme: internal
     # service.beta.kubernetes.io/aws-load-balancer-ssl-negotiation-policy: "ELBSecurityPolicy-2016-08"
     # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: >-
     #   arn:aws:acm:us-east-1:843825445314:certificate/fbc6bd31-3a91-4ce3-b261-83a5721588f3
-    # # service.beta.kubernetes.io/aws-load-balancer-ssl-ports: httpse"
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-ports: httpse"
 
-  loadBalancerIP: ""
-  loadBalancerSourceRanges: []
-  externalTrafficPolicy: ""
-  externalIPs: []
-  ipFamilyPolicy: ""
-  ipFamilies: []
+  # loadBalancerIP: ""
+  # loadBalancerSourceRanges: []
+  # externalTrafficPolicy: ""
+  # externalIPs: []
+  # ipFamilyPolicy: ""
+  # ipFamilies: []
 
 resources:
   requests:
