@@ -43,17 +43,17 @@ service:
   - name: status-port
     port: 15021
     protocol: TCP
-    nodePort: 3000
+    nodePort: 30000
     targetPort: 15021
   - name: http2
     port: 80
-    nodePort: 3001
+    nodePort: 30001
     protocol: TCP
     targetPort: 80
   - name: https
     port: 443
     protocol: TCP
-    nodePort: 3002
+    nodePort: 30002
     targetPort: 443
   annotations: 
     service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-east-1:843825445314:certificate/fbc6bd31-3a91-4ce3-b261-83a5721588f3
